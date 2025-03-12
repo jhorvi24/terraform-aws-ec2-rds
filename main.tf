@@ -41,13 +41,6 @@ resource "aws_internet_gateway" "igw-bookstore" {
   
 }
 
-/*resource "aws_internet_gateway_attachment" "igw_attach" {
-
-    internet_gateway_id = aws_internet_gateway.igw.id
-    vpc_id = aws_vpc.bookstore-vpc.id
-  
-}*/
-
 resource "aws_route_table" "rt_igw"{
     vpc_id = aws_vpc.bookstore-vpc.id     
     depends_on = [aws_internet_gateway.igw-bookstore]
