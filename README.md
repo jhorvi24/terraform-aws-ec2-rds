@@ -14,9 +14,9 @@ Este repositorio contiene configuraciones de Terraform para implementar una infr
 
 ### Arquitectura
 La infraestructura incluye:
-- **VPC** con una subred pública y una subred privada.
+- **VPC** con una subred pública y dos subredes privadas.
 - **Instancia EC2** ejecutando la aplicación Flask.
-- **Base de datos RDS MariaDB** en una subred privada.
+- **Base de datos RDS MariaDB** en un grupo de subredes privadas.
 - **Systems Manager** para el almacenamiento seguro de los parámetros de conexion a la base de datos.
 - **Grupos de seguridad** para el control de acceso a la red.
 
@@ -46,7 +46,7 @@ La infraestructura incluye:
 
 #### Configuración de VPC
 - VPC con un bloque CIDR especificado.
-- Una subred pública y una subred privada en una zona de disponibilidad.
+- Una subred pública y dos subredes privadas en una zona de disponibilidad.
 - Internet Gateway para acceso público.
 - Tablas de enrutamiento para la gestión del tráfico de red.
 
@@ -100,7 +100,7 @@ terraform apply
 
 ### Consideraciones de Seguridad
 - Instancias EC2 en subred pública con acceso restringido.
-- RDS en subred privada.
+- RDS en un grupo de subredes privadas.
 - Grupos de seguridad con acceso mínimo necesario.
 - Systems Manager para acceso seguro a las instancias y almacenamiento de parametros de conexión a la base de datos.
 
