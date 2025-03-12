@@ -20,6 +20,7 @@ La infraestructura incluye:
 - **Systems Manager** para el almacenamiento seguro de los parámetros de conexion a la base de datos.
 - **Grupos de seguridad** para el control de acceso a la red.
 
+![arquitectura aws](img/EC2-RDS.svg)
 ---
 
 ### Requisitos Previos
